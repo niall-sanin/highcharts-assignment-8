@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>My first chart with Highcharts</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"> </script>
+        <script src="js/highcharts.js"></script>
+        <script type="text/javascript" src="/js/themes/dark-blue.js"></script>
+        <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+
+<h1>Analysis of Wages and Self-Employment in Selected Industries</h1>
+
+<h2>By: Niall Sanin</h2>
+
+<p>
+  The following charts provide a graphical representation of the total amount of money (in U.S. dollars) that is paid to all the employees in the following selected industries (Information, Finance and insurance, Arts, entertainment, and recreation) and the number of self-employed persons in each of these industries, respectively. The first chart, "Wages and Salaries by Industry", depicts the differences between wages paid to workers employed in each of the abovementioned three industries. The chart shows that (cumulatively) those in the finance and insurance industry are paid the highest salaries of the three, those in the information industry are paid the second-highest salaries, while those in the arts, entertainment, and recreation industry are paid the lowest wages of the three selected industries. The second chart, "Self-Employed Persons by Industry", shows that both the finance and insurance and the arts, entertainment, and recreation industries have comparable numbers of self-employed persons between them, while the information industry contains a much lower number of self-employed persons than the previous two.
+</p>
+
+<p>
+  One of the most interesting findings between the two charts is that despite the fact that the arts and finance industries do contain a nearly equal number of self-employed persons year-after-year, people who work in the finance and insurance industry are consistently being paid more money in wages and salaries than those who work in the arts, entertainment, and recreation industry year-after-year as well.
+</p>
+<!-- add the div and the code below this comment -->
+<div id="container1" style="width:100%; height:400px;"></div>
+<script>
+$(function () {
+    var myChart = Highcharts.chart('container1', {
+        chart: {
+            type: 'bar'
+        },
+        title: {
+            text: 'Wages and Salaries by Industry,(Millions of dollars) Last Revised on: August 03, 2016'
+        },
+        xAxis: {
+            categories: ['2008','2009','2010','2011','2012','2013','2014','2015']
+        },
+        yAxis: {
+            title: {
+                text: 'Wages (in millions of dollars)'
+            }
+        },
+        series: [{
+            name: 'Information',
+            data: [214033,202209,204203,213840,224290,239079,253072,266809]
+        }, {
+            name: 'Finance and insurance',
+            data: [517918,466229,486408,513465,536849,545505,581039,609708]
+        }, {
+          name: 'Arts, entertainment, and recreation',
+          data: [69669,67150,68255,70154,73894,76357,81049,86513]
+        }]
+    });
+});
+</script>
+<p>Source: U.S. Bureau of Economic Analysis,
+<a href="http://www.bea.gov/iTable/iTable.cfm?ReqID=9&step=1#reqid=9&step=3&isuri=1&903=189"> Section 6 Income and Employment by Industry, Table 6.3D Wages and Salaries by Industry
+</a></p>
+
+<div id="container2" style="width:100%; height:400px;"></div>
+<script>
+$(function () {
+    var myChart = Highcharts.chart('container2', {
+        chart: {
+            type: 'line'
+        },
+        title: {
+            text: 'Self-Employed Persons by Industry,(Thousands) Last Revised on: August 03, 2016'
+        },
+        xAxis: {
+            categories: ['2008','2009','2010','2011','2012','2013','2014','2015']
+        },
+        yAxis: {
+            title: {
+                text: 'Number of self-employed persons (in thousands)'
+            }
+        },
+        series: [{
+            name: 'Information',
+            data: [122,145,140,131,141,124,128,161]
+        }, {
+            name: 'Finance and insurance',
+            data: [748,667,640,614,650,667,627,624]
+        }, {
+          name: 'Arts, entertainment, and recreation',
+          data: [693,636,609,637,660,672,658,698]
+        }]
+    });
+});
+</script>
+<p>Source: U.S. Bureau of Economic Analysis,
+<a href="http://www.bea.gov/iTable/iTable.cfm?ReqID=9&step=1#reqid=9&step=3&isuri=1&903=205"> Section 6 Income and Employment by Industry, Table 6.7D Self-Employed Persons by Industry
+</a></p>
+
+</body>
+</html>
